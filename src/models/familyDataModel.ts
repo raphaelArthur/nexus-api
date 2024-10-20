@@ -3,19 +3,19 @@ import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IFamilyData extends Document {
   userId: mongoose.Types.ObjectId;  // Referência ao usuário
-  householdMembers: number;  // Quantas pessoas moram no domicílio
-  childrenUnder10: number;   // Quantas são crianças menores de 10 anos
-  youthBetween11And21: number; // Quantas são jovens entre 11 e 21 anos
-  adultsBetween21And65: number; // Quantas são adultos entre 21 e 65 anos
-  elderlyOver65: number;     // Quantas são idosos acima de 65 anos
+  householdMembers: number;  // Quantas pessoas moram em seu lote/residência?
+  childrenUnder10: number;   // Quantos moradores são crianças (menores de 10 anos)
+  youthBetween11And21: number; // Quantos moradores são jovens (entre 11 e 21 anos)?
+  adultsBetween21And65: number; // Quantos moradores são adultos (entre 21 e 65 anos)?
+  elderlyOver65: number;     // Quantos moradores são idosos com mais de 65 anos?
   maleMembers: number;       // Quantos homens
   femaleMembers: number;     // Quantas mulheres
   othersMembers: number;     // Quantos se identificam como outros
-  receiveSocialBenefits: boolean; // Recebem benefícios sociais?
-  socialBenefits?: string[];  // Benefícios sociais recebidos (múltipla escolha)
-  contributingMembers: number; // Quantos membros contribuem para a renda familiar
-  familyIncome: number;       // Valor total da renda familiar
-  incomeSources: string[];    // Fontes de renda (múltipla escolha)
+  receiveSocialBenefits: boolean; // Você ou algum membro da sua família recebe benefícios sociais?
+  socialBenefits?: string[];  // Selecione o(s) benefício(s)
+  contributingMembers: number; // Quantos membros da sua família contribuem com a renda familiar mensal?
+  familyIncome: number;       // Quanto soma mensalmente o valor da renda dos familiares que contribuem com a renda familiar?
+  incomeSources: string[];    // Quais são as principais fontes de renda familiar?
 }
 
 const familyDataSchema: Schema = new Schema({

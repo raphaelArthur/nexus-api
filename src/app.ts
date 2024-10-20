@@ -3,11 +3,13 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-import { IUser } from './models/userModel';
-import authRoutes from './routes/authRoutes';
+import { IUser } from '@models/userModel';
 
-import userRoutes from './routes/userRoutes';
-import familyDataRoutes from './routes/familyDataRoutes';
+//routes
+import authRoutes from '@routes/authRoutes';
+import userRoutes from '@routes/userRoutes';
+import familyDataRoutes from '@routes/familyDataRoutes';
+import diagnosticRoutes from '@routes/diagnosticRoutes';
 
 declare global {
   namespace Express {
@@ -26,6 +28,7 @@ app.use(cors());
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/family', familyDataRoutes);
+app.use('/api/diagnostic', diagnosticRoutes);
 
 const PORT = process.env.PORT || 5000;
 
