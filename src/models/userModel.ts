@@ -6,6 +6,7 @@ export interface IUser extends Document {
   _id: mongoose.Types.ObjectId;  
   name: string;
   email: string;
+  cep: string;
   uf: string;
   city: string;
   address: string;
@@ -27,6 +28,7 @@ export interface IUser extends Document {
 const userSchema: Schema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },  // Email único
+  cep: { type: String, required: true },
   uf: { type: String, required: true },
   city: { type: String, required: true },
   address: { type: String, required: true },

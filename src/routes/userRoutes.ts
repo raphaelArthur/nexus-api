@@ -1,8 +1,8 @@
 // src/routes/userRoutes.ts
 import express from 'express';
-import AuthController from '../controllers/AuthController';
-import { protect } from '../middlewares/authMiddleware';
-import { isAdmin } from '../middlewares/adminMiddleware';
+import AuthController from '@controllers/AuthController';
+import { protect } from '@middlewares/authMiddleware';
+import { isAdmin } from '@middlewares/adminMiddleware';
 
 const router = express.Router();
 

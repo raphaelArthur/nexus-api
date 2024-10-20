@@ -10,6 +10,7 @@ export interface IFamilyData extends Document {
   elderlyOver65: number;     // Quantas são idosos acima de 65 anos
   maleMembers: number;       // Quantos homens
   femaleMembers: number;     // Quantas mulheres
+  othersMembers: number;     // Quantos se identificam como outros
   receiveSocialBenefits: boolean; // Recebem benefícios sociais?
   socialBenefits?: string[];  // Benefícios sociais recebidos (múltipla escolha)
   contributingMembers: number; // Quantos membros contribuem para a renda familiar
@@ -26,6 +27,7 @@ const familyDataSchema: Schema = new Schema({
   elderlyOver65: { type: Number, required: true },
   maleMembers: { type: Number, required: true },
   femaleMembers: { type: Number, required: true },
+  othersMembers: { type: Number, required: true },
   receiveSocialBenefits: { type: Boolean, required: true },
   socialBenefits: { 
     type: [String], 

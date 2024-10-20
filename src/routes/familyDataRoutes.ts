@@ -1,7 +1,7 @@
 import express from 'express';
-import FamilyDataController from '../controllers/FamilyDataController';
+import FamilyDataController from '@controllers/FamilyDataController';
 
-import { protect } from '../middlewares/authMiddleware';
+import { protect } from '@middlewares/authMiddleware';
 
 const router = express.Router();
 
